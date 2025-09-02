@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleconomicmarket</title>
+  <style>
+    :root{
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --ring:#e5e7eb;
+      /* bright gray–gold vibe */
+      --bg1:#f7f7f4;
+      --bg2:#f2efe7;
+      --bg3:#fff6d8;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink);
+      background:linear-gradient(180deg,var(--bg1),var(--bg2) 40%,var(--bg3));
+      min-height:100dvh; padding:16px;
+    }
+    header{display:flex; flex-direction:column; gap:10px; margin-bottom:14px}
+    nav a{margin-right:12px; text-decoration:none; color:#111; border:1px solid var(--ring); padding:6px 10px; border-radius:999px; background:#fff}
+    nav a:hover{box-shadow:0 1px 0 rgba(0,0,0,.05)}
+    #authArea input{padding:8px 10px; border:1px solid var(--ring); border-radius:8px; margin-right:6px}
+    #authArea button{padding:8px 10px; border:1px solid var(--ring); border-radius:10px; background:#fff; cursor:pointer; margin-right:6px}
+    #app{margin-top:8px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px}
+    .card{position:relative; padding:12px; border:1px solid var(--ring); border-radius:14px; background:#fff}
+    .badge{position:absolute; top:8px; right:8px; font-size:12px; padding:2px 8px; border-radius:999px; background:#f5f5f5}
+    .muted{color:var(--muted)}
+    form .row{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    form label{display:block; margin:.5rem 0}
+    textarea{width:100%; min-height:110px}
+    .actions{margin-top:12px}
+    button{cursor:pointer}
+    fieldset.pay{border:1px dashed var(--ring); padding:.75rem; border-radius:10px; background:#fff}
+    small .num{font-variant-numeric:tabular-nums}
+    table.table{width:100%; border-collapse:collapse; background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden}
+    table.table th, table.table td{border-bottom:1px solid #f0f0f0; padding:10px; text-align:left}
+    table.table tbody tr:last-child td{border-bottom:none}
+    table.table button{margin-right:6px; padding:6px 10px; border:1px solid #e5e7eb; background:#fff; border-radius:8px; cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <div id="authArea"></div>
+
+    <nav>
+      <a href="#/">Home</a>
+      <a href="#/goods">Goods</a>
+      <a href="#/post/goods">Post Goods</a>
+      <a href="#/post/services">Post Services</a>
+      <a href="#/post/rentals">Post Rentals</a>
+      <a href="#/post/jobs">Post Jobs</a>
+      <a href="#/post/ads">Post Advertising</a>
+      <a href="#/inbox">Inbox</a>
+      <a href="#/location">My Location</a>
+      <a id="adminLink" href="#/admin" style="display:none">Admin</a>
+    </nav>
+
+    <small>
+      AfriMoney: <span class="num" id="afr">—</span> ·
+      Orange Money: <span class="num" id="orm">—</span>
+    </small>
+  </header>
+
+  <main id="app"></main>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
